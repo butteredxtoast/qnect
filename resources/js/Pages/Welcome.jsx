@@ -7,6 +7,7 @@ import SecondaryButton from '@/Components/SecondaryButton';
 import TextInput from '@/Components/TextInput';
 import { useForm } from '@inertiajs/react';
 import PrimaryButton from '@/Components/PrimaryButton';
+import ProfilePic from '@/Components/ProfilePic';
 
 export default function Profile() {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -38,17 +39,6 @@ export default function Profile() {
         setConfirmingUserDeletion(true);
     };
 
-    const deleteUser = (e) => {
-        e.preventDefault();
-
-        destroy(route('profile.destroy'), {
-            preserveScroll: true,
-            onSuccess: () => closeModal(),
-            onError: () => passwordInput.current.focus(),
-            onFinish: () => reset(),
-        });
-    };
-
     const closeModal = () => {
         setConfirmingUserDeletion(false);
         reset();
@@ -60,18 +50,7 @@ export default function Profile() {
 
     return (
         <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6">
-            {/* Header */}
-            <div className="px-4 sm:px-0 text-center mb-6">
-                <img
-                    className="h-32 w-32 rounded-full mx-auto"
-                    src="https://via.placeholder.com/150" // Placeholder for profile picture
-                    alt="Profile Picture"
-                />
-                <h2 className="text-2xl font-semibold leading-7 text-gray-900">Bill Keuth</h2>
-                <p className="mt-1 text-lg text-gray-600">Software Developer</p>
-                <p className="mt-1 text-sm text-gray-500">bill@hey.com</p>
-            </div>
-
+            <ProfilePic />
             {/* Profile Information */}
             <div className="mt-6 border-t border-gray-200">
                 <dl className="divide-y divide-gray-200">
