@@ -77,7 +77,7 @@ export default function Profile() {
                     </div>
                     <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium text-gray-500">Skills</dt>
-                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">PHP, Laravel, Node.js, MySQL</dd>
+                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">PHP, Laravel, React, Java, MySQL</dd>
                     </div>
                     <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium text-gray-500">About</dt>
