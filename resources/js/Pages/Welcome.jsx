@@ -56,10 +56,6 @@ export default function Profile() {
             <div className="mt-6 border-t border-gray-200">
                 <dl className="divide-y divide-gray-200">
                     <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
-                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">(317)340-3179</dd>
-                    </div>
-                    <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium text-gray-500">Location</dt>
                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">San Francisco, CA</dd>
                     </div>

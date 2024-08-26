@@ -59,7 +59,7 @@ export default function ConnectModal({ show, onClose }) {
                                 className="hidden"  // Hide the radio button itself
                                 onChange={(e) => setData('connectType', e.target.value)}
                             />
-                            <label htmlFor="radio-email" className="w-full ms-2 text-sm font-medium text-gray-900">Email</label>
+                            <label htmlFor="radio-email" className="w-full text-sm font-medium text-gray-900">Email</label>
                         </div>
 
                         {/* Phone Option */}
@@ -75,7 +75,7 @@ export default function ConnectModal({ show, onClose }) {
                                 className="hidden"  // Hide the radio button itself
                                 onChange={(e) => setData('connectType', e.target.value)}
                             />
-                            <label htmlFor="radio-phone" className="w-full ms-2 text-sm font-medium text-gray-900">Phone</label>
+                            <label htmlFor="radio-phone" className="w-full text-sm font-medium text-gray-900">Phone</label>
                         </div>
                     </div>
                 </div>
