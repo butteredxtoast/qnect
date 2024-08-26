@@ -8,17 +8,18 @@ import Modal from '@/Components/Modal';
 
 export default function ConnectModal({ show, onClose }) {
     const { post, data, setData, processing, reset, errors } = useForm({
-        connectType: '',      // Stores the connection type (email or phone)
-        contactValue: '',     // Stores the entered email or phone value
+        name: '',
+        connectType: '',
+        contactValue: '',
     });
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        
+
         post(route('contact.store'), {
             onSuccess: () => {
-                reset();   // Clear the form after successful submission
-                onClose(); // Close the modal
+                reset();
+                onClose();
             }
         });
     };
@@ -26,39 +27,62 @@ export default function ConnectModal({ show, onClose }) {
     return (
         <Modal show={show} onClose={onClose}>
             <form onSubmit={handleFormSubmit} className="p-6">
-                <h2 className="text-lg font-medium text-gray-900">How should we connect?</h2>
+                {/* Name Input Field */}
+                <div className="mt-4">
+                    <InputLabel htmlFor="name"/>
+                    <TextInput
+                        id="name"
+                        type="text"
+                        name="name"
+                        value={data.name}
+                        onChange={(e) => setData('name', e.target.value)}
+                        className="mt-1 block w-full"
+                        placeholder="What's your name?"
+                    />
+                    <InputError message={errors.name} className="mt-2" />
+                </div>
 
-                <p className="mt-1 text-sm text-gray-600">Select how you'd like to connect:</p>
+                {/* Radio Button Options for Connection Type */}
+                <div className="mt-6">
+                    <InputLabel value="Connection Type" />
+                    <div className="flex justify-center space-x-6 mt-4">
+                        {/* Email Option */}
+                        <div
+                            className={`flex items-center border border-gray-200 rounded cursor-pointer px-4 py-2 ${data.connectType === 'Email' ? 'bg-gray-300' : 'bg-gray-100 hover:bg-blue-100'}`}
+                            onClick={() => setData('connectType', 'email')}
+                        >
+                            <input
+                                id="radio-email"
+                                type="radio"
+                                value="Email"
+                                name="connectType"
+                                className="hidden"  // Hide the radio button itself
+                                onChange={(e) => setData('connectType', e.target.value)}
+                            />
+                            <label htmlFor="radio-email" className="w-full ms-2 text-sm font-medium text-gray-900">Email</label>
+                        </div>
 
-                {/* Radio Button Options */}
-                <div className="flex justify-between mt-4">
-                    <div className="flex items-center ps-4 border border-gray-200 rounded">
-                        <input
-                            id="radio-email"
-                            type="radio"
-                            value="Email"
-                            name="connectType"
-                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
-                            onChange={(e) => setData('connectType', e.target.value)}
-                        />
-                        <label htmlFor="radio-email" className="w-full py-4 ms-2 text-sm font-medium text-gray-900">Email</label>
-                    </div>
-                    <div className="flex items-center ps-4 border border-gray-200 rounded">
-                        <input
-                            id="radio-phone"
-                            type="radio"
-                            value="Phone"
-                            name="connectType"
-                            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"
-                            onChange={(e) => setData('connectType', e.target.value)}
-                        />
-                        <label htmlFor="radio-phone" className="w-full py-4 ms-2 text-sm font-medium text-gray-900">Phone</label>
+                        {/* Phone Option */}
+                        <div
+                            className={`flex items-center border border-gray-200 rounded cursor-pointer px-4 py-2 ${data.connectType === 'Phone' ? 'bg-gray-300' : 'bg-gray-100 hover:bg-blue-100'}`}
+                            onClick={() => setData('connectType', 'phone')}
+                        >
+                            <input
+                                id="radio-phone"
+                                type="radio"
+                                value="Phone"
+                                name="connectType"
+                                className="hidden"  // Hide the radio button itself
+                                onChange={(e) => setData('connectType', e.target.value)}
+                            />
+                            <label htmlFor="radio-phone" className="w-full ms-2 text-sm font-medium text-gray-900">Phone</label>
+                        </div>
                     </div>
                 </div>
 
                 {/* Input Field for Contact Info */}
                 <div className="mt-6">
-                    <InputLabel htmlFor="contactValue" value={`Enter your ${data.connectType}`} />
+                    <InputLabel htmlFor="contactValue" />
                     <TextInput
                         id="contactValue"
                         type="text"
