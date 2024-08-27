@@ -9,6 +9,7 @@ import { useForm } from '@inertiajs/react';
 import PrimaryButton from '@/Components/PrimaryButton';
 import ProfilePic from '@/Components/ProfilePic';
 import ConnectModal from '@/Components/ConnectModal';
+import { Head } from '@inertiajs/react';
 
 export default function Profile() {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
@@ -51,6 +52,7 @@ export default function Profile() {
 
     return (
         <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6">
+            <Head title="Howdy stranger!" />
             <ProfilePic />
             {/* Profile Information */}
             <div className="mt-6 border-t border-gray-200">
@@ -78,7 +80,7 @@ export default function Profile() {
                     <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium text-gray-500">About</dt>
                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
-                            I am a highly motivated backend developer with over 10 years of experience in PHP and Laravel. I enjoy creating scalable, efficient web applications and solving complex problems.
+                        Curious human with over three years of experience in backend development, API integration, and full-stack engineering. I love bringing definition to ambiguity and solving complex problems. With a strong foundation in both the technical and collaborative aspects of software development, I bring creativity, precision, and a commitment to continuous learning to every project I tackle. Outside of work, I co-lead a free fitness group, am an ultramarathon runner, and music enthusiast, always pushing the boundaries of what’s possible—both in code and life.
                         </dd>
                     </div>
                     <div className="px-4 py-5 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">

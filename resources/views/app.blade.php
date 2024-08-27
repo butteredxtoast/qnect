@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <!-- Primary Meta Tags -->
+        <title>{{ $title ?? 'Hey it\'s Bill' }}</title>
+        <meta name="title" content="BillK" />
+        <meta name="description" content="Website for things generally related to Bill" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://billkeuth.com/" />
+        <meta property="og:title" content="BillK" />
+        <meta property="og:description" content="Website for things generally related to Bill" />
+        <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://billkeuth.com/" />
+        <meta property="twitter:title" content="BillK" />
+        <meta property="twitter:description" content="Website for things generally related to Bill" />
+        <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+        <!-- Meta Tags Generated with https://metatags.io -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
