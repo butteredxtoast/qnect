@@ -1,10 +1,4 @@
-import { PaperClipIcon } from '@heroicons/react/20/solid';
 import { useRef, useState } from 'react';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import Modal from '@/Components/Modal';
-import SecondaryButton from '@/Components/SecondaryButton';
-import TextInput from '@/Components/TextInput';
 import { useForm } from '@inertiajs/react';
 import PrimaryButton from '@/Components/PrimaryButton';
 import ProfilePic from '@/Components/ProfilePic';
@@ -26,12 +20,8 @@ export default function Profile() {
 
     const {
         post,
-        data,
-        setData,
         delete: destroy,
-        processing,
         reset,
-        errors,
     } = useForm({
         password: '',
         connectionDetail: '',
@@ -75,12 +65,15 @@ export default function Profile() {
                     </div>
                     <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium text-gray-500">Skills</dt>
-                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">PHP, Laravel, React, Java, MySQL</dd>
+                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">PHP, Laravel, React, Java, MySQL, probably others</dd>
                     </div>
                     <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                         <dt className="text-sm font-medium text-gray-500">About</dt>
                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2">
-                        Curious human with over three years of experience in backend development, API integration, and full-stack engineering. I love bringing definition to ambiguity and solving complex problems. With a strong foundation in both the technical and collaborative aspects of software development, I bring creativity, precision, and a commitment to continuous learning to every project I tackle. Outside of work, I co-lead a free fitness group, am an ultramarathon runner, and music enthusiast, always pushing the boundaries of what’s possible—both in code and life.
+                        Curious human who loves bringing definition to ambiguity and solving complex problems.
+                        <p>
+                        Outside of work, I co-lead a free fitness group, am an ultramarathon runner, and music enthusiast.
+                        </p>
                         </dd>
                     </div>
                     <div className="px-4 py-5 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
