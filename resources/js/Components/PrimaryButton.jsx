@@ -3,7 +3,7 @@ export default function PrimaryButton({ className = '', disabled, children, ...p
         <button
             {...props}
             className={
-                `inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500 to-yellow-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:from-pink-400 hover:to-yellow-400 focus:from-pink-400 focus:to-yellow-400 active:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 transition ease-in-out duration-150 ${
+                `inline-flex items-center px-4 py-2 bg-green-400 dark:bg-green-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-500 dark:hover:bg-green-700 focus:bg-green-500 dark:focus:bg-green-700 active:bg-green-600 dark:active:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-300 focus:ring-offset-2 transition ease-in-out duration-150 ${
                     disabled && 'opacity-25'
                 } ` + className
             }
@@ -13,3 +13,4 @@ export default function PrimaryButton({ className = '', disabled, children, ...p
         </button>
     );
 }
+

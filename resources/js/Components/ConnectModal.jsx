@@ -26,73 +26,60 @@ export default function ConnectModal({ show, onClose }) {
 
     return (
         <Modal show={show} onClose={onClose}>
-            <form onSubmit={handleFormSubmit} className="p-6">
+            <form onSubmit={handleFormSubmit} className="p-6 bg-white dark:bg-gray-800">
                 {/* Name Input Field */}
                 <div className="mt-4">
-                    <InputLabel htmlFor="name"/>
+                    <InputLabel htmlFor="name" className="text-gray-900 dark:text-gray-200"/>
                     <TextInput
                         id="name"
                         type="text"
                         name="name"
                         value={data.name}
                         onChange={(e) => setData('name', e.target.value)}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200"
                         placeholder="What's your name?"
                     />
-                    <InputError message={errors.name} className="mt-2" />
+                    <InputError message={errors.name} className="mt-2 text-red-500 dark:text-red-400" />
                 </div>
 
                 {/* Radio Button Options for Connection Type */}
                 <div className="mt-6">
-                    <InputLabel value="Connection Type" />
                     <div className="flex justify-center space-x-6 mt-4">
                         {/* Email Option */}
                         <div
-                            className={`flex items-center border border-gray-200 rounded cursor-pointer px-4 py-2 ${data.connectType === 'Email' ? 'bg-gray-300' : 'bg-gray-100 hover:bg-blue-100'}`}
+                            className={`flex items-center border border-gray-200 dark:border-gray-600 rounded cursor-pointer px-4 py-2 ${
+                                data.connectType === 'Email' ? 'bg-green-400 dark:bg-green-600' : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-200'
+                            }`}
                             onClick={() => setData('connectType', 'email')}
                         >
-                            <input
-                                id="radio-email"
-                                type="radio"
-                                value="Email"
-                                name="connectType"
-                                className="hidden"  // Hide the radio button itself
-                                onChange={(e) => setData('connectType', e.target.value)}
-                            />
-                            <label htmlFor="radio-email" className="w-full text-sm font-medium text-gray-900">Email</label>
+                            <label htmlFor="radio-email" className="w-full text-sm font-medium text-gray-900 dark:text-gray-200">Email</label>
                         </div>
 
                         {/* Phone Option */}
                         <div
-                            className={`flex items-center border border-gray-200 rounded cursor-pointer px-4 py-2 ${data.connectType === 'Phone' ? 'bg-gray-300' : 'bg-gray-100 hover:bg-blue-100'}`}
+                            className={`flex items-center border border-gray-200 dark:border-gray-600 rounded cursor-pointer px-4 py-2 ${
+                                data.connectType === 'Phone' ? 'bg-green-400 dark:bg-green-600' : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-200'
+                            }`}
                             onClick={() => setData('connectType', 'phone')}
                         >
-                            <input
-                                id="radio-phone"
-                                type="radio"
-                                value="Phone"
-                                name="connectType"
-                                className="hidden"  // Hide the radio button itself
-                                onChange={(e) => setData('connectType', e.target.value)}
-                            />
-                            <label htmlFor="radio-phone" className="w-full text-sm font-medium text-gray-900">Phone</label>
+                            <label htmlFor="radio-phone" className="w-full text-sm font-medium text-gray-900 dark:text-gray-200">Phone</label>
                         </div>
                     </div>
                 </div>
 
                 {/* Input Field for Contact Info */}
                 <div className="mt-6">
-                    <InputLabel htmlFor="contactValue" />
+                    <InputLabel htmlFor="contactValue" className="text-gray-900 dark:text-gray-200" />
                     <TextInput
                         id="contactValue"
                         type="text"
                         name="contactValue"
                         value={data.contactValue}
                         onChange={(e) => setData('contactValue', e.target.value)}
-                        className="mt-1 block w-full"
+                        className="mt-1 block w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200"
                         placeholder={`Enter your ${data.connectType}...`}
                     />
-                    <InputError message={errors.contactValue} className="mt-2" />
+                    <InputError message={errors.contactValue} className="mt-2 text-red-500 dark:text-red-400" />
                 </div>
 
                 {/* Buttons */}
