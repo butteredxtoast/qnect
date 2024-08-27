@@ -13,7 +13,6 @@ export default function ProfilePic() {
                 alt="Profile Picture"
             />
                 <h2 className="text-2xl font-semibold leading-7 text-gray-900 dark:text-white">Bill Keuth</h2>
-                <p className="mt-1 text-lg text-gray-600 dark:text-white">Software Developer</p>
                 <p className="mt-1 text-sm text-gray-500 dark:text-white">bill@hey.com</p>
         </div>
     );

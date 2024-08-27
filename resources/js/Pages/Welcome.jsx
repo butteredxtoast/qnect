@@ -31,37 +31,47 @@ export default function Profile() {
                 <div className="mt-6 border-t border-gray-200 dark:border-gray-600"> {/* Added dark mode border */}
                     <dl className="divide-y divide-gray-200 dark:divide-gray-600">
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Location</dt>
-                            <dd className="mt-1 text-sm text-gray-900 dark:text-gray-200 sm:col-span-2">San Francisco, CA</dd>
+                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">About</dt>
+                            <dd className="mt-1 text-sm text-gray-900 dark:text-gray-200 sm:col-span-2">
+                            <p>
+                                Curious human who loves bringing definition to ambiguity and solving complex problems.
+                            </p>
+                            <br />
+                            <p>
+                                Co-leader of a free fitness community in San Francisco.
+                                <p>Would love to talk to you about running.</p>
+                            </p>
+                            </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">LinkedIn</dt>
                             <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
-                                <a href="https://www.linkedin.com/in/billkeuth/" target="_blank">linkedin.com/in/billkeuth/</a>
+                                <a href="https://www.linkedin.com/in/billkeuth/" target="_blank">View LinkedIn</a>
                             </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Github</dt>
                             <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
-                                <a href="https://github.com/butteredxtoast" target="_blank">github.com/butteredxtoast</a>
+                                <a href="https://github.com/butteredxtoast" target="_blank">View GitHub</a>
                             </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Skills</dt>
-                            <dd className="mt-1 text-sm text-gray-900 dark:text-gray-200 sm:col-span-2">PHP, Laravel, React, Java, MySQL, probably others</dd>
+                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Instagram</dt>
+                            <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
+                                <a href="https://www.instagram.com/butteredxtoast" target="_blank">View Instagram</a>
+                            </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">About</dt>
-                            <dd className="mt-1 text-sm text-gray-900 dark:text-gray-200 sm:col-span-2">
-                                Curious human who loves bringing definition to ambiguity and solving complex problems.
-                                <p>
-                                    Outside of work, I co-lead a free fitness group, am an ultramarathon runner, and music enthusiast.
-                                </p>
+                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Download contact info</dt>
+                            <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
+                                <a href={route('vcard.download')} className="hover:underline" download>
+                                    Download vCard
+                                </a>
                             </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
                             <div className="flex justify-center">
-                                <PrimaryButton onClick={confirmUserDeletion}>Let's Connect!</PrimaryButton>
+                                <PrimaryButton onClick={confirmUserDeletion}>Let's Connect</PrimaryButton>
                                 <ConnectModal
                                     show={confirmingUserDeletion}
                                     onClose={closeModal}

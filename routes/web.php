@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\VCardController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -31,5 +32,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/download-vcard', [VCardController::class, 'download'])->name('vcard.download');
 
 require __DIR__.'/auth.php';

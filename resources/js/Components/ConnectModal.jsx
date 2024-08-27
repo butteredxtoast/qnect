@@ -9,7 +9,7 @@ import Modal from '@/Components/Modal';
 export default function ConnectModal({ show, onClose }) {
     const { post, data, setData, processing, reset, errors } = useForm({
         name: '',
-        connectType: '',
+        connectType: 'email',
         contactValue: '',
     });
 
@@ -37,36 +37,10 @@ export default function ConnectModal({ show, onClose }) {
                         value={data.name}
                         onChange={(e) => setData('name', e.target.value)}
                         className="mt-1 block w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200"
-                        placeholder="What's your name?"
+                        placeholder="Your name"
                     />
                     <InputError message={errors.name} className="mt-2 text-red-500 dark:text-red-400" />
                 </div>
-
-                {/* Radio Button Options for Connection Type */}
-                <div className="mt-6">
-                    <div className="flex justify-center space-x-6 mt-4">
-                        {/* Email Option */}
-                        <div
-                            className={`flex items-center border border-gray-200 dark:border-gray-600 rounded cursor-pointer px-4 py-2 ${
-                                data.connectType === 'Email' ? 'bg-green-400 dark:bg-green-600' : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-200'
-                            }`}
-                            onClick={() => setData('connectType', 'email')}
-                        >
-                            <label htmlFor="radio-email" className="w-full text-sm font-medium text-gray-900 dark:text-gray-200">Email</label>
-                        </div>
-
-                        {/* Phone Option */}
-                        <div
-                            className={`flex items-center border border-gray-200 dark:border-gray-600 rounded cursor-pointer px-4 py-2 ${
-                                data.connectType === 'Phone' ? 'bg-green-400 dark:bg-green-600' : 'bg-gray-100 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-blue-200'
-                            }`}
-                            onClick={() => setData('connectType', 'phone')}
-                        >
-                            <label htmlFor="radio-phone" className="w-full text-sm font-medium text-gray-900 dark:text-gray-200">Phone</label>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Input Field for Contact Info */}
                 <div className="mt-6">
                     <InputLabel htmlFor="contactValue" className="text-gray-900 dark:text-gray-200" />
@@ -77,7 +51,7 @@ export default function ConnectModal({ show, onClose }) {
                         value={data.contactValue}
                         onChange={(e) => setData('contactValue', e.target.value)}
                         className="mt-1 block w-full bg-gray-100 dark:bg-gray-700 dark:text-gray-200"
-                        placeholder={`Enter your ${data.connectType}...`}
+                        placeholder={`Your ${data.connectType}`}
                     />
                     <InputError message={errors.contactValue} className="mt-2 text-red-500 dark:text-red-400" />
                 </div>
