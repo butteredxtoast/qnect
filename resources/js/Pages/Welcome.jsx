@@ -33,18 +33,24 @@ export default function Profile() {
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                             <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">About</dt>
                             <dd className="mt-1 text-sm text-gray-900 dark:text-gray-200 sm:col-span-2">
-                            <p>
-                                Curious human who loves bringing definition to ambiguity and solving complex problems.
-                            </p>
-                            <br />
-                            <p>
-                                Co-leader of a free fitness community in San Francisco.
-                                <p>Would love to talk to you about running.</p>
-                            </p>
+                                <p>
+                                    Curious human | Software Engineer | Community Builder
+                                </p>
+                                <br/>
+                                <p>
+                                    Co-leader of a free fitness community in San Francisco.
+                                    <p>Would probably love to talk to you about running.</p>
+                                </p>
                             </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">LinkedIn</dt>
+                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Fun Social</dt>
+                            <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
+                                <a href="https://www.instagram.com/butteredxtoast" target="_blank">View Instagram</a>
+                            </dd>
+                        </div>
+                        <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Business Social</dt>
                             <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
                                 <a href="https://www.linkedin.com/in/billkeuth/" target="_blank">View LinkedIn</a>
                             </dd>
@@ -56,29 +62,13 @@ export default function Profile() {
                             </dd>
                         </div>
                         <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Instagram</dt>
-                            <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
-                                <a href="https://www.instagram.com/butteredxtoast" target="_blank">View Instagram</a>
-                            </dd>
-                        </div>
-                        <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Download contact info</dt>
+                            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Contact info
+                            </dt>
                             <dd className="mt-1 text-sm leading-6 text-indigo-600 dark:text-indigo-400 sm:col-span-2 sm:mt-0">
                                 <a href={route('vcard.download')} className="hover:underline" download>
                                     Download vCard
                                 </a>
                             </dd>
-                        </div>
-                        <div className="px-4 py-5 sm:grid sm:grid-cols-1 sm:gap-4 sm:px-0">
-                            <div className="flex justify-center">
-                                <PrimaryButton onClick={confirmUserDeletion}>Let's Connect</PrimaryButton>
-                                <ConnectModal
-                                    show={confirmingUserDeletion}
-                                    onClose={closeModal}
-                                    handleOptionChange={handleOptionChange}
-                                    selectedOption={selectedOption}
-                                />
-                            </div>
                         </div>
                     </dl>
                 </div>
